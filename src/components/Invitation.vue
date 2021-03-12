@@ -9,7 +9,7 @@
             <p><b>{{ options.gentlemen }} & {{ options.ladies }}</b></p>
             <p>时间：{{ options.time }}</p>
             <p @click="openMapNavigation">地点：<b>{{ options.address }}</b></p>
-            <div @click="openMapNavigation"> :style="`opacity: ${Number(isOpening)}`">
+            <div @click="openMapNavigation" :style="`opacity: ${Number(isOpening)}`">
               <div id="map"></div>
             </div>
             <div class="content-inside-bless">
