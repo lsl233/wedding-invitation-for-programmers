@@ -5,14 +5,38 @@
 </template>
 
 <script>
-  import Editor from "./components/Editor.vue"
+  import wx from 'weixin-js-sdk'
+  import Editor from './components/Editor.vue'
+  import http from './utils/http'
 
   export default {
     props: [],
     components: {
       Editor
     },
-    name: 'Wedding'
+    name: 'Wedding',
+    created() {
+      this.ininWX()
+    },
+    methods: {
+      async ininWX() {
+        const data = await http.get('/wx/signature')
+    
+        wx.config({
+          debug: true, // 是否开启调试模式
+          appId: data.appid, //appid:需与公众号一致
+          timestamp: data.timestamp, // 时间戳
+          nonceStr: data.noncestr, // 随机字符串
+          signature: data.signature, // 签名
+          jsApiList: [
+              'onMenuShareAppMessage',
+              'onMenuShareTimeline',
+              'updateAppMessageShareData',
+              'updateTimelineShareData',
+          ] // 需要使用的JS接口列表
+        })
+      }
+    }
   }
 
 </script>

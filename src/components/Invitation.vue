@@ -6,9 +6,9 @@
           <div class="content-inside">
             <img class="content-inside-photo" src="../images/photo.jpg">
             <p>我们结婚啦！</p>
-            <p><b>Jun & undefined</b></p>
-            <p>时间：invalid date value</p>
-            <p>地点：<b>location can not be found</b></p>
+            <p><b>{{ options.gentlemen }} & {{ options.ladies }}</b></p>
+            <p>时间：{{ options.time }}</p>
+            <p>地点：<b>{{ options.address }}</b></p>
             <div class="content-inside-bless">
               <input
                 placeholder="写下你的祝福" 
@@ -35,10 +35,13 @@
 </template>
 
 <script>
+import options from '../../options.json'
+
 export default {
   props: ['canOpen'],
   data() {
     return {
+      options,
       isOpening: false,
       wish: '',
       isFocused: false,

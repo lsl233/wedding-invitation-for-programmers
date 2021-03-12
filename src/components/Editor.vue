@@ -57,6 +57,8 @@
     created() {
       this.startDate = (new Date()).toDateString()
       this.progressivelyTyping()
+
+      
     },
     updated() {
       this.scrollToBottom()
@@ -72,6 +74,8 @@
       }
     },
     methods: {
+      
+
       scrollToBottom() {
         // 保持页面一直滚到最下面
         this.$refs.editor.scrollTop = 100000
