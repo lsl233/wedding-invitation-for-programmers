@@ -92,10 +92,11 @@ export default {
       const map = new TMap.Map(document.getElementById('map'), {
         center: center,
         zoom: 17.2,
-        showControl: false
+        showControl: false,
+        mapStyleId: 'style3'
       })
 
-      map.click = this.openMapNavigation
+      map.on('click', this.openMapNavigation)
 
       const markerLayer = new TMap.MultiMarker({
         map: map,  //指定地图容器
