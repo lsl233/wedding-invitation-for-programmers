@@ -9,6 +9,7 @@
             <p><b>{{ options.gentlemen }} & {{ options.ladies }}</b></p>
             <p>时间：{{ options.time }}</p>
             <p>地点：<b>{{ options.address }}</b></p>
+            <div id="map"></div>
             <div class="content-inside-bless">
               <input
                 placeholder="写下你的祝福" 
@@ -25,7 +26,7 @@
               </div>
             </div>
           </div>
-          <div id="map"></div>
+          
         </div>
         <div class="cover-inside-left" :class="{'opening':isOpening}"></div>
         <div class="cover-inside-right" :class="{'opening':isOpening}"></div>

@@ -48,7 +48,7 @@
         currentCode: '',
         isCursorVisible: 1,
         canExecute: false,
-        canOpen: true,
+        canOpen: false,
         wish: '',
         hasClosed: false,
         canStart: false
