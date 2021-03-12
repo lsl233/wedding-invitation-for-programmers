@@ -95,6 +95,8 @@ export default {
         showControl: false
       })
 
+      map.click = this.openMapNavigation
+
       const markerLayer = new TMap.MultiMarker({
         map: map,  //指定地图容器
         //样式定义
