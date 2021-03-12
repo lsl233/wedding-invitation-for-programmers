@@ -25,6 +25,7 @@
               </div>
             </div>
           </div>
+          <div id="map"></div>
         </div>
         <div class="cover-inside-left" :class="{'opening':isOpening}"></div>
         <div class="cover-inside-right" :class="{'opening':isOpening}"></div>
@@ -47,6 +48,11 @@ export default {
       isFocused: false,
       hasEntered: false
     }
+  },
+  mounted() {
+    // eslint-disable-next-line no-debugger
+    debugger
+    this.initMap()
   },
   methods: {
     // 打开邀请函
@@ -71,6 +77,30 @@ export default {
         setTimeout(() => {
           this.$emit('sendBarrage', this.wish)
         }, 660)
+      })
+    },
+    async initMap() {
+      const TMap = await this.loadMapScript()
+      /* eslint-disable */
+        // eslint-disable-next-line
+        const center= new TMap.LatLng(39.984120,116.307484)
+        // eslint-disable-next-line
+        debugger
+        const map = new TMap.Map(document.getElementById('map'), {
+            center: center,
+            zoom: 17.2,
+        })
+    },
+    loadMapScript() {
+      /* eslint-disable */
+      return new Promise((resolve, reject) => {
+        window.initMap = () => {
+          resolve(window.TMap)
+        }
+        var script = document.createElement('script')
+        script.type = 'text/javascript'
+        script.src = 'https://map.qq.com/api/gljs?v=1.exp&key=CWRBZ-SYV6X-2RO4A-ZVNR3-D5SLZ-F4BV3&callback=initMap';
+        document.body.appendChild(script)
       })
     }
   }

@@ -40,8 +40,8 @@
             desc: 'lishilei&ldd邀请你参加',
             link: window.location.href,
             imgUrl: 'https://lddd.fun/photo.jpg',
-          }, (res) => {
-            alert(111)
+          }, res => {
+            console.log(res)
           });
           // wx.updateTimelineShareData({
           //   title: 'lishilei&ldd', // 分享标题
