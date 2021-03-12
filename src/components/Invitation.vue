@@ -4,7 +4,7 @@
       <div class="invitation-cover">
         <div class="cover-content" :class="{'invitation-up':isOpening}">
           <div class="content-inside">
-            <img class="content-inside-photo" src="../images/photo.jpg">
+            <div class="cover"></div>
             <p>我们结婚啦！</p>
             <p><b>{{ options.gentlemen }} & {{ options.ladies }}</b></p>
             <p>时间：{{ options.time }}</p>
@@ -214,6 +214,15 @@ export default {
           background-color: #FFF1DE;
           text-align: center;
           overflow: auto;
+
+          .cover {
+            background-image: url("../images/image-1.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+            height: 160px;
+            width: 100%;
+          }
 
           .content-inside-photo {
             width: 100%;

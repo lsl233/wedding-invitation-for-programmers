@@ -40,7 +40,7 @@
             title: 'lishilei&ldd',
             desc: 'lishilei&ldd邀请你参加',
             link: window.location.href,
-            imgUrl: 'https://lddd.fun/photo.jpg',
+            imgUrl: './images/image-1.jpg',
           }, res => {
             console.log(res)
           });
