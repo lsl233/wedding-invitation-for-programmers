@@ -30,14 +30,13 @@
           signature: data.signature, // 签名
           jsApiList: [
               'onMenuShareAppMessage',
-              'onMenuShareTimeline',
               'updateAppMessageShareData',
               'updateTimelineShareData',
           ] // 需要使用的JS接口列表
         })
 
         wx.ready(() => {   //需在用户可能点击分享按钮前就先调用
-          wx.updateAppMessageShareData({
+          wx.onMenuShareAppMessage({
             title: 'test', // 分享标题
             desc: 'lishilei&ldd', // 分享描述
             link: window.location.href, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
