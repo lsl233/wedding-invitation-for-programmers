@@ -1,6 +1,6 @@
 <template>
   <div class="wedding">
-    <Editor/>
+    <Editor @openMapNavigation="openMapNavigation" />
   </div>
 </template>
 
@@ -16,10 +16,10 @@
     },
     name: 'Wedding',
     created() {
-      this.ininWX()
+      this.initWX()
     },
     methods: {
-      async ininWX() {
+      async initWX() {
         const data = await http.get('/wx/signature')
         wx.config({
           // debug: true, // 是否开启调试模式
@@ -31,6 +31,7 @@
               'onMenuShareAppMessage',
               'updateAppMessageShareData',
               'updateTimelineShareData',
+              'openLocation'
           ] // 需要使用的JS接口列表
         })
 
@@ -50,6 +51,15 @@
           // }, (res) => {
           //   alert(222)
           // })
+        })
+      },
+      openMapNavigation() {
+        wx.openLocation({
+          latitude: 30.587948,
+          longitude: 103.909978,
+          name: '星宸航都国际酒店',
+          address: '四川省成都市双流区航林路888号',
+          scale: 15
         })
       }
     }
