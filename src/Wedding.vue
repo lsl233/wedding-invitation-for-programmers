@@ -21,9 +21,8 @@
     methods: {
       async ininWX() {
         const data = await http.get('/wx/signature')
-        debugger
         wx.config({
-          debug: true, // 是否开启调试模式
+          // debug: true, // 是否开启调试模式
           appId: data.appid, //appid:需与公众号一致
           timestamp: data.timestamp, // 时间戳
           nonceStr: data.noncestr, // 随机字符串
@@ -35,12 +34,12 @@
           ] // 需要使用的JS接口列表
         })
 
-        wx.ready(() => {   //需在用户可能点击分享按钮前就先调用
+        wx.ready(() => {
           wx.onMenuShareAppMessage({
-            title: 'test', // 分享标题
-            desc: 'lishilei&ldd', // 分享描述
-            link: window.location.href, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
-            imgUrl: './photo.jpg', // 分享图标
+            title: 'lishilei&ldd',
+            desc: 'lishilei&ldd邀请你参加',
+            link: window.location.href,
+            imgUrl: 'https://lddd.fun/photo.jpg',
           }, (res) => {
             alert(111)
           });
