@@ -54,6 +54,8 @@
         })
       },
       openMapNavigation() {
+        /* eslint-disable */
+        debugger
         wx.openLocation({
           latitude: 30.587948,
           longitude: 103.909978,

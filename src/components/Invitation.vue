@@ -8,8 +8,8 @@
             <p>我们结婚啦！</p>
             <p><b>{{ options.gentlemen }} & {{ options.ladies }}</b></p>
             <p>时间：{{ options.time }}</p>
-            <p>地点：<b>{{ options.address }}</b></p>
-            <div @click="$emit('openMapNavigation')" :style="`opacity: ${Number(isOpening)}`">
+            <p @click="openMapNavigation">地点：<b>{{ options.address }}</b></p>
+            <div @click="openMapNavigation"> :style="`opacity: ${Number(isOpening)}`">
               <div id="map"></div>
             </div>
             <div class="content-inside-bless">
@@ -40,6 +40,7 @@
 </template>
 
 <script>
+import wx from 'weixin-js-sdk'
 import options from '../../options.json'
 
 export default {
@@ -125,6 +126,16 @@ export default {
         script.type = 'text/javascript'
         script.src = 'https://map.qq.com/api/gljs?v=1.exp&key=CWRBZ-SYV6X-2RO4A-ZVNR3-D5SLZ-F4BV3&callback=initMap';
         document.body.appendChild(script)
+      })
+    },
+    openMapNavigation() {
+      debugger
+      wx.openLocation({
+        latitude: 30.587948,
+        longitude: 103.909978,
+        name: '星宸航都国际酒店',
+        address: '四川省成都市双流区航林路888号',
+        scale: 15
       })
     }
   }
