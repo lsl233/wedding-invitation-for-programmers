@@ -1,7 +1,7 @@
 const axios = require('axios')
 
 const instance = axios.create({
-  baseURL: '/api',
+  baseURL: 'https://lddd.fun/api',
   timeout: 1000,
 })
 
