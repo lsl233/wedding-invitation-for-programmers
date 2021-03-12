@@ -41,17 +41,17 @@
             title: 'test', // 分享标题
             desc: 'lishilei&ldd', // 分享描述
             link: window.location.href, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
-            // imgUrl: 'https://www.zzes1314.cn/images/qrcode.png', // 分享图标
+            imgUrl: './photo.jpg', // 分享图标
           }, (res) => {
             alert(111)
           });
-          wx.updateTimelineShareData({
-            title: 'lishilei&ldd', // 分享标题
-            link: window.location.href, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
-            // imgUrl: 'https://www.zzes1314.cn/images/qrcode.png', // 分享图标
-          }, (res) => {
-            alert(222)
-          })
+          // wx.updateTimelineShareData({
+          //   title: 'lishilei&ldd', // 分享标题
+          //   link: window.location.href, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+          //   // imgUrl: 'https://www.zzes1314.cn/images/qrcode.png', // 分享图标
+          // }, (res) => {
+          //   alert(222)
+          // })
         })
       }
     }
