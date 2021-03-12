@@ -21,7 +21,7 @@
     methods: {
       async ininWX() {
         const data = await http.get('/wx/signature')
-    
+        debugger
         wx.config({
           debug: true, // 是否开启调试模式
           appId: data.appid, //appid:需与公众号一致
