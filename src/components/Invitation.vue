@@ -216,7 +216,7 @@ export default {
           overflow: auto;
 
           .cover {
-            background-image: url("../images/image-1.jpg");
+            background-image: url("../../public/image-1.jpg");
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center center;
